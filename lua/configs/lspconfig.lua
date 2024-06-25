@@ -23,11 +23,3 @@ lspconfig.tsserver.setup {
   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
   root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
 }
-
-lspconfig.templ.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-  filetypes = { "templ" },
-  root_dir = lspconfig.util.root_pattern ".git",
-}
