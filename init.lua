@@ -46,9 +46,6 @@ dofile(vim.g.base46_cache .. "statusline")
 
 require "nvchad.autocmds"
 
-vim.o.scrolloff = 10
-vim.o.relativenumber = true
-
 vim.schedule(function()
   require "mappings"
 end)
