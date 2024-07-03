@@ -35,6 +35,5 @@ vim.cmd([[
   command! VTerm :vsp | :wincmd l | :resize 50% | :terminal
 ]])
 
-
 -- Select a word
 map("n", "<leader><leader>", "viw")

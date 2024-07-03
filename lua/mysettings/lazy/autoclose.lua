@@ -1,12 +1,12 @@
 return {
-	"m4xshen/autoclose.nvim",
-	lazy = false,
+    "m4xshen/autoclose.nvim",
+    lazy = false,
 
-	config = function()
-		require("autoclose").setup({
-			keys = {
-				["$"] = { escape = true, close = true, pair = "$$", disabled_filetypes = {} },
-			},
-		})
-	end,
+    config = function()
+        require("autoclose").setup({
+            keys = {
+                ["$"] = { escape = true, close = true, pair = "$$", disabled_filetypes = {} },
+            },
+        })
+    end,
 }
