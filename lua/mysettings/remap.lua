@@ -37,3 +37,6 @@ vim.cmd([[
 
 -- Select a word
 map("n", "<leader><leader>", "viw")
+
+-- Toggle spell check
+map("n", "<leader>sp", ":set spell!<CR>", opts)

@@ -28,7 +28,7 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
-                "pyright",
+                "pylsp",
                 "html",
                 "cssls",
                 "gopls",
@@ -70,19 +70,33 @@ return {
                         },
                     })
                 end,
-                ["pyright"] = function()
+                ["pylsp"] = function()
                     local lspconfig = require("lspconfig")
-                    lspconfig.pyright.setup({
+                    lspconfig.pylsp.setup({
                         capabilities = capabilities,
                         settings = {
+                            pylsp = {
+                                plugins = {
+                                    pycodestyle = { enabled = true },
+                                    autopep8 = { enabled = true },
+                                },
+                                configurationSources = { "flake8" }
+                            },
                             python = {
                                 analysis = {
-                                    typeCheckingMode = "normal",
-                                    autoSearchPaths = true,
-                                    useLibraryCodeForTypes = true,
+                                    typeCheckingMode = "advanced",
+                                    autosearchpaths = true,
+                                    uselibrarycodefortypes = true,
                                 },
                             },
                         },
+                    })
+                    -- Add autocommand for formatting on save
+                    vim.api.nvim_create_autocmd("BufWritePre", {
+                        pattern = { "*.py" },
+                        callback = function()
+                            vim.lsp.buf.format()
+                        end,
                     })
                 end,
                 ["html"] = function()
@@ -92,9 +106,9 @@ return {
                         settings = {
                             html = {
                                 analysis = {
-                                    typeCheckingMode = "normal",
-                                    autoSearchPaths = true,
-                                    useLibraryCodeForTypes = true,
+                                    typecheckingmode = "normal",
+                                    autosearchpaths = true,
+                                    uselibrarycodefortypes = true,
                                 },
                             },
                         }

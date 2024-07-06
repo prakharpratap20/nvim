@@ -3,7 +3,7 @@ require("mysettings.remap")
 require("mysettings.lazy_init")
 
 local augroup = vim.api.nvim_create_augroup
-local ThePrimeagenGroup = augroup("ThePrimeagen", {})
+local prime = augroup("mysettings", {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup("HighlightYank", {})
@@ -12,12 +12,19 @@ function R(name)
     require("plenary.reload").reload_module(name)
 end
 
-vim.filetype.add({
-    extension = {
-        templ = "templ",
-    },
+-- Automatically open Netrw when starting Neovim without arguments
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        if vim.fn.argc() == 0 then
+            vim.cmd("Ex")
+        end
+    end
 })
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
 
+--
 autocmd("TextYankPost", {
     group = yank_group,
     pattern = "*",
@@ -30,13 +37,13 @@ autocmd("TextYankPost", {
 })
 
 autocmd({ "BufWritePre" }, {
-    group = ThePrimeagenGroup,
+    group = prime,
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
 
 autocmd("LspAttach", {
-    group = ThePrimeagenGroup,
+    group = prime,
     callback = function(e)
         local opts = { buffer = e.buf }
         vim.keymap.set("n", "gd", function()
@@ -63,15 +70,11 @@ autocmd("LspAttach", {
         vim.keymap.set("i", "<C-h>", function()
             vim.lsp.buf.signature_help()
         end, opts)
-        vim.keymap.set("n", "[d", function()
+        vim.keymap.set("n", "]d", function()
             vim.diagnostic.goto_next()
         end, opts)
-        vim.keymap.set("n", "]d", function()
+        vim.keymap.set("n", "[d", function()
             vim.diagnostic.goto_prev()
         end, opts)
     end,
 })
-
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
