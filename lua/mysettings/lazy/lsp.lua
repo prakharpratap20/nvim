@@ -1,7 +1,6 @@
 return {
     "VonHeikemen/lsp-zero.nvim",
     dependencies = {
-        "folke/tokyonight.nvim",
         "neovim/nvim-lspconfig",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/nvim-cmp",
@@ -17,7 +16,7 @@ return {
             lsp_zero.default_keymaps({ buffer = bufnr })
         end)
 
-        require("lspconfig").pyright.setup({})
+        require("lspconfig").ruff_lsp.setup({})
         require("lspconfig").emmet_ls.setup({})
         require("lspconfig").lua_ls.setup({})
 
