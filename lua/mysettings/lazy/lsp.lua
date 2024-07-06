@@ -79,8 +79,10 @@ return {
                                 plugins = {
                                     pycodestyle = { enabled = true },
                                     autopep8 = { enabled = true },
+                                    mccabe = { enabled = false }
                                 },
-                                configurationSources = { "flake8" }
+                                configurationSources = { "flake8" },
+                                logLevel = "warn",
                             },
                             python = {
                                 analysis = {
@@ -90,13 +92,6 @@ return {
                                 },
                             },
                         },
-                    })
-                    -- Add autocommand for formatting on save
-                    vim.api.nvim_create_autocmd("BufWritePre", {
-                        pattern = { "*.py" },
-                        callback = function()
-                            vim.lsp.buf.format()
-                        end,
                     })
                 end,
                 ["html"] = function()
