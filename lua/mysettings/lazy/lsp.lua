@@ -16,9 +16,18 @@ return {
             lsp_zero.default_keymaps({ buffer = bufnr })
         end)
 
-        require("lspconfig").ruff_lsp.setup({})
         require("lspconfig").emmet_ls.setup({})
         require("lspconfig").lua_ls.setup({})
+        require("lspconfig").go_pls.setup({})
+        require("lspconfig").pylsp.setup({
+            settings = {
+                pylsp = {
+                    plugins = {
+                        pylsp_mypy = { enabled = false }
+                    }
+                }
+            }
+        })
 
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
