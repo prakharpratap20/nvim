@@ -79,3 +79,13 @@ autocmd("LspAttach", {
         end, opts)
     end,
 })
+
+
+-- function to clear command line after some command
+vim.api.nvim_create_autocmd("BufWritePost", {
+    callback = function()
+        vim.defer_fn(function()
+            vim.cmd("echon ''")
+        end, 500) -- Delay in milliseconds
+    end,
+})

@@ -16,9 +16,10 @@ return {
             lsp_zero.default_keymaps({ buffer = bufnr })
         end)
 
+        require("lspconfig").intelephense.setup({})
+
         require("lspconfig").emmet_ls.setup({})
         require("lspconfig").lua_ls.setup({})
-        require("lspconfig").go_pls.setup({})
         require("lspconfig").pylsp.setup({
             settings = {
                 pylsp = {
