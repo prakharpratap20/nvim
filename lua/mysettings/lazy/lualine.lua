@@ -43,7 +43,6 @@ return {
                         end
                         return table.concat(lsp_names, ', ')
                     end,
-                    color = { fg = '#FFFFFF' },
                 }, "filetype", },
                 lualine_y = { "progress" },
                 lualine_z = { "location" },
