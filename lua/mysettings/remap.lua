@@ -5,7 +5,7 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
-map("n", "<leader>e", vim.cmd.Ex)
+map("n", "<leader>e", vim.cmd.Ex, opts)
 
 map("n", "<leader>x", ":bdelete<CR>", opts)
 
@@ -17,7 +17,7 @@ map("n", "<S-Tab>", ":bprevious<CR>", opts)
 map("n", ";", ":", { desc = "CMD enter command mode" })
 
 -- Escape in insert mode
-map("i", "jk", "<ESC>")
+map("i", "jk", "<ESC>", opts)
 
 -- Run Python file
 map("n", "<leader>'", ":w<CR>:!python3 %<CR>", opts)
