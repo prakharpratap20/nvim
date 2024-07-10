@@ -85,6 +85,8 @@ return {
 		})
 
 		vim.diagnostic.config({
+			signs = false,
+			underline = false,
 			-- update_in_insert = true,
 			float = {
 				focusable = false,
