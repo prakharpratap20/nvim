@@ -32,6 +32,7 @@ vim.opt.clipboard = "unnamedplus"
 
 -- vim.opt.colorcolumn = "80"
 
+-- command to always have space at the end of the file
 vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI", "BufEnter" }, {
 	group = vim.api.nvim_create_augroup("ScrollOffEOF", {}),
 	callback = function()

@@ -32,7 +32,7 @@ return {
 					},
 				},
 				lualine_b = { "branch", "diff", "diagnostics" },
-				lualine_c = { { "filename" } },
+				lualine_c = { "filename" },
 				lualine_x = {
 					{
 						function()
@@ -47,10 +47,9 @@ return {
 							return table.concat(lsp_names, ", ")
 						end,
 					},
-					"filetype",
 				},
-				lualine_y = { "progress" },
-				lualine_z = { "location" },
+				lualine_y = { "filetype" },
+				lualine_z = { "progress" },
 			},
 			inactive_sections = {
 				lualine_a = {},
