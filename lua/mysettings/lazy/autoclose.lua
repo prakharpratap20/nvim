@@ -1,8 +1,7 @@
 return {
 	"m4xshen/autoclose.nvim",
-	lazy = true,
 	event = {
-		"BufRead",
+		"InsertEnter",
 	},
 	config = function()
 		require("autoclose").setup({

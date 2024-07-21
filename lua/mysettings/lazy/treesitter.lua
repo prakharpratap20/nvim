@@ -12,6 +12,8 @@ return {
 				"python",
 				"html",
 				"css",
+				"c",
+				"cpp",
 			},
 
 			-- Install parsers synchronously (only applied to `ensure_installed`)

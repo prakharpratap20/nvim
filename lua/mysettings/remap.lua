@@ -20,8 +20,8 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>", opts)
 
 -- Run Python file
-map("n", "<leader>'", ":w<CR>:!python3 %<CR>", opts)
-
+map("n", "<leader>p", ":w<CR>:!python3 %<CR>", opts)
+map("n", "<leader>c", ":w<CR>:!gcc % -o %:r<CR>:!%:r<CR>", opts)
 -- Move lines in visual mode
 map("v", "J", ":m '>+1<CR>gv=gv", opts)
 map("v", "K", ":m '<-2<CR>gv=gv", opts)
