@@ -13,7 +13,6 @@ return {
 				javascript = { "prettier" },
 				python = { "autopep8" },
 				html = { "prettier" },
-				htmldjango = { "prettier" },
 				-- Use the "*" filetype to run formatters on all filetypes.
 				["*"] = { "codespell" },
 				-- Use the "_" filetype to run formatters on filetypes that don't
