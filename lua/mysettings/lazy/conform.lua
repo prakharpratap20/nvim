@@ -15,6 +15,7 @@ return {
 				html = { "prettier" },
 				c = { "clang-format" },
 				cpp = { "clang-format" },
+
 				-- Use the "*" filetype to run formatters on all filetypes.
 				["*"] = { "codespell" },
 				-- Use the "_" filetype to run formatters on filetypes that don't
