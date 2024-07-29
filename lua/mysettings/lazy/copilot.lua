@@ -1,7 +1,6 @@
 return {
 	"github/copilot.vim",
+	event = "BufRead",
 
-	config = function()
-		vim.keymap.set("n", "<leader>cp", ":Copilot<CR>", {})
-	end,
+	config = function() end,
 }
