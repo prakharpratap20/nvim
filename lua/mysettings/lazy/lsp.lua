@@ -8,7 +8,7 @@ return {
 	},
 	lazy = true,
 	event = {
-		"BufRead",
+		"BufReadPre",
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -21,9 +21,12 @@ return {
 		end)
 
 		require("lspconfig").emmet_ls.setup({})
-		require("lspconfig").ccls.setup({})
 		-- require("lspconfig").tsserver.setup({})
 		require("lspconfig").lua_ls.setup({})
+		require("lspconfig").vimls.setup({})
+		require("lspconfig").jsonls.setup({})
+		require("lspconfig").html.setup({})
+		require("lspconfig").cssls.setup({})
 		require("lspconfig").pylsp.setup({
 			settings = {
 				pylsp = {
