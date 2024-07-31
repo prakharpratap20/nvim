@@ -1,6 +1,6 @@
-require("mysettings.set")
-require("mysettings.remap")
-require("mysettings.lazy_init")
+require("mysettings.set") -- Set global options
+require("mysettings.remap") -- Set key mappings
+require("mysettings.lazy_init") -- Lazy load plugins
 
 local augroup = vim.api.nvim_create_augroup
 local prime = augroup("mysettings", {})
@@ -8,6 +8,7 @@ local prime = augroup("mysettings", {})
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup("HighlightYank", {})
 
+-- Reload configuration
 function R(name)
 	require("plenary.reload").reload_module(name)
 end
@@ -20,9 +21,9 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		end
 	end,
 })
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
+vim.g.netrw_browse_split = 0 -- open in the same window
+vim.g.netrw_banner = 0 -- disable banner
+vim.g.netrw_winsize = 25 -- set window size to 25
 
 -- highlight on yank
 autocmd("TextYankPost", {
@@ -36,12 +37,14 @@ autocmd("TextYankPost", {
 	end,
 })
 
+-- remove trailing whitespace on save
 autocmd({ "BufWritePre" }, {
 	group = prime,
 	pattern = "*",
 	command = [[%s/\s\+$//e]],
 })
 
+-- set filetype based on file extension
 autocmd("LspAttach", {
 	group = prime,
 	callback = function(e)

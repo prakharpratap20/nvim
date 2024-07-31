@@ -1,10 +1,10 @@
 return {
 	"VonHeikemen/lsp-zero.nvim",
 	dependencies = {
-		"neovim/nvim-lspconfig",
-		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/nvim-cmp",
-		"L3MON4D3/LuaSnip",
+		"neovim/nvim-lspconfig", -- LSP configurations
+		"hrsh7th/cmp-nvim-lsp", -- LSP source for nvim-cmp
+		"hrsh7th/nvim-cmp", -- Autocompletion plugin
+		"L3MON4D3/LuaSnip", -- Snippets plugin
 	},
 	lazy = true,
 	event = {
@@ -20,13 +20,13 @@ return {
 			lsp_zero.default_keymaps({ buffer = bufnr })
 		end)
 
-		require("lspconfig").emmet_ls.setup({})
+		require("lspconfig").emmet_ls.setup({}) -- Emmet
 		-- require("lspconfig").tsserver.setup({})
-		require("lspconfig").lua_ls.setup({})
-		require("lspconfig").vimls.setup({})
-		require("lspconfig").jsonls.setup({})
-		require("lspconfig").html.setup({})
-		require("lspconfig").cssls.setup({})
+		require("lspconfig").lua_ls.setup({}) -- Lua
+		require("lspconfig").vimls.setup({}) -- Vim
+		require("lspconfig").jsonls.setup({}) -- JSON
+		require("lspconfig").html.setup({}) -- HTML
+		require("lspconfig").cssls.setup({}) -- CSS
 		require("lspconfig").pylsp.setup({
 			settings = {
 				pylsp = {
@@ -35,7 +35,7 @@ return {
 					},
 				},
 			},
-		})
+		}) -- Python
 
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
