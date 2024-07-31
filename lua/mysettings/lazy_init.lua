@@ -10,7 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
 		lazypath,
 	})
 end
-vim.opt.rtp:prepend(lazypath)
+vim.opt.rtp:prepend(lazypath) -- Add to runtimepath
 
 require("lazy").setup({
 	spec = "mysettings.lazy",
