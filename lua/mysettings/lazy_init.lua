@@ -1,5 +1,7 @@
 -- Load the lazy plugin and setup the configuration
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
+-- Install lazy.nvim if it doesn't exist
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
@@ -13,6 +15,6 @@ end
 vim.opt.rtp:prepend(lazypath) -- Add to runtimepath
 
 require("lazy").setup({
-	spec = "mysettings.lazy",
-	change_detection = { notify = true },
+	spec = "mysettings.lazy", -- Path to your lazy settings
+	change_detection = { notify = true }, -- Enable change detection
 })
