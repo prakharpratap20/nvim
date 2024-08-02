@@ -22,7 +22,7 @@ vim.opt.signcolumn = "yes" -- always show sign column
 vim.opt.isfname:append("@-@") -- allow @ in filenames
 vim.opt.updatetime = 50 -- set updatetime to 50ms
 vim.opt.clipboard = "unnamedplus" -- use system clipboard
-vim.opt.colorcolumn = "80" -- set color column to 80
+-- vim.opt.colorcolumn = "80" -- set color column to 80
 
 -- command to always have space at the end of the file
 vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI", "BufEnter" }, {
