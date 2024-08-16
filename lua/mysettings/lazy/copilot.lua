@@ -2,5 +2,5 @@ return {
 	"github/copilot.vim",
 	event = "BufRead",
 
-	config = function() end,
+	config = function() end, -- No configuration needed
 }

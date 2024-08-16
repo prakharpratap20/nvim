@@ -7,20 +7,20 @@ return {
 	config = function()
 		require("gitsigns").setup({
 			signs = {
-				add = { text = "┃" },
-				change = { text = "┃" },
-				delete = { text = "_" },
-				topdelete = { text = "‾" },
-				changedelete = { text = "~" },
-				untracked = { text = "┆" },
+				add = { text = "┃" }, -- Change the text for signs added
+				change = { text = "┃" }, -- Change the text for signs changed
+				delete = { text = "_" }, -- Change the text for signs deleted
+				topdelete = { text = "‾" }, -- Change the text for signs top-deleted
+				changedelete = { text = "~" }, -- Change the text for signs changed-deleted
+				untracked = { text = "┆" }, -- Change the text for signs untracked
 			},
 			signs_staged = {
-				add = { text = "┃" },
-				change = { text = "┃" },
-				delete = { text = "_" },
-				topdelete = { text = "‾" },
-				changedelete = { text = "~" },
-				untracked = { text = "┆" },
+				add = { text = "┃" }, -- Change the text for signs added
+				change = { text = "┃" }, -- Change the text for signs changed
+				delete = { text = "_" }, -- Change the text for signs deleted
+				topdelete = { text = "‾" }, -- Change the text for signs top-deleted
+				changedelete = { text = "~" }, -- Change the text for signs changed-deleted
+				untracked = { text = "┆" }, -- Change the text for signs untracked
 			},
 			signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
 			numhl = false, -- Toggle with `:Gitsigns toggle_numhl`

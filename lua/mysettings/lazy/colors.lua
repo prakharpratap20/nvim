@@ -19,7 +19,7 @@ return {
 				styles = {
 					bold = false,
 					italic = false,
-					transparency = true,
+					transparency = true, -- Enable setting the background color
 				},
 
 				groups = {
