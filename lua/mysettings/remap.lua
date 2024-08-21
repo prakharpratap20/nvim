@@ -3,6 +3,8 @@ vim.g.mapleader = " " -- Set leader key to space
 -- Add your custom mappings here
 
 local map = vim.keymap.set -- Set key mappings
+-- noremap: Do not remap the right-hand side of the mappings
+-- silent: Do not echo the command in the command line
 local opts = { noremap = true, silent = true } -- Options for key mappings
 
 map("n", "<leader>e", vim.cmd.Ex, opts) -- Open command mode
