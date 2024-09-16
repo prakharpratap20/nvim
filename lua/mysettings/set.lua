@@ -1,7 +1,7 @@
 _G.vim = vim -- global variable to access vim's functions
 
 vim.opt.number = true -- set numbered lines
-vim.opt.relativenumber = true -- set relative number
+-- vim.opt.relativenumber = true -- set relative number
 vim.opt.showmode = false -- don't show mode
 vim.opt.tabstop = 4 -- tab width
 vim.opt.softtabstop = 4 -- tab width
