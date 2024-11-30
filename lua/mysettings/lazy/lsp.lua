@@ -27,6 +27,7 @@ return {
 		require("lspconfig").jsonls.setup({}) -- JSON
 		require("lspconfig").html.setup({}) -- HTML
 		require("lspconfig").cssls.setup({}) -- CSS
+		require("lspconfig").jdtls.setup({}) -- JAVA
 		require("lspconfig").pylsp.setup({
 			settings = {
 				pylsp = {
