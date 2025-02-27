@@ -1,7 +1,15 @@
 _G.vim = vim -- global variable to access vim's functions
 
+-- java settings
+
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_node_provider = 0
+vim.g.loaded_python_provider = 0
+vim.g.loaded_python3_provider = 0
+
 vim.opt.number = true -- set numbered lines
--- vim.opt.relativenumber = true -- set relative number
+vim.opt.relativenumber = true -- set relative number
 vim.opt.showmode = false -- don't show mode
 vim.opt.tabstop = 4 -- tab width
 vim.opt.softtabstop = 4 -- tab width

@@ -14,6 +14,7 @@ return {
 				"css",
 				"c",
 				"cpp",
+				"java",
 			},
 
 			-- Install parsers synchronously (only applied to `ensure_installed`)
